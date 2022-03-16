@@ -11,7 +11,15 @@
 
 (function() {
     'use strict';
-    document.getElementsByClassName("H\+NzRG97")[0].style.width='60vw'
-    document.getElementsByTagName('video')[0].style.height='630px'
+    function fix(){
+        try{
+            document.getElementsByClassName("H\+NzRG97")[0].style.width='60vw';
+            document.getElementsByTagName('video')[0].style.height='630px';
+        }catch (e) {
+            console.log(e);
+            setTimeout(function(){fix()},1000);
+        }
+    }
+    fix();
     // Your code here...
 })();
